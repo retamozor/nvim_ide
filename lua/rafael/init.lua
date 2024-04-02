@@ -6,3 +6,5 @@ local tab_width = 2
 set.tabstop = tab_width
 set.softtabstop = tab_width
 set.shiftwidth = tab_width
+set.number = true
+set.relativenumber = false
