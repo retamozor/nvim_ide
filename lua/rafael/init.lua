@@ -8,3 +8,8 @@ set.softtabstop = tab_width
 set.shiftwidth = tab_width
 set.number = true
 set.relativenumber = false
+
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', fg = '#3bb9c4' })
+vim.api.nvim_set_hl(0, 'FloatTitle', { fg = '#dfdfdf' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopeTitle', { bg = 'none' })
