@@ -11,6 +11,7 @@ return {
 			"hrsh7th/nvim-cmp",
 			{ "L3MON4D3/LuaSnip", version = "v2.*" },
 			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -26,8 +27,8 @@ return {
 					end,
 				},
 				mapping = cmp.mapping.preset.insert({
-					['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-					['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+					['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+					['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
 					['<CR>'] = cmp.mapping.confirm({ select = true }),
 					['<C-f>'] = cmp.mapping.complete(),
 					['<C-e>'] = cmp.mapping.abort(),
@@ -42,6 +43,10 @@ return {
 			})
 
 			require("luasnip.loaders.from_vscode").lazy_load()
+			local ls = require("luasnip")
+			vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
+			vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
+			vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
 
 			require("mason").setup()
 			require("mason-lspconfig").setup({

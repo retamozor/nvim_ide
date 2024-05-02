@@ -1,8 +1,8 @@
 return {
 	"norcalli/nvim-colorizer.lua",
-	config = function ()
+	config = function()
 		local co = require("colorizer")
 		co.setup()
-		vim.keymap.set('n', '<leader>c', co.reload_all_buffers)
+		vim.keymap.set('n', '<leader>c', co.reload_all_buffers, { desc = "Recargar colores" })
 	end
 }
