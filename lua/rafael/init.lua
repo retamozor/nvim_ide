@@ -9,6 +9,7 @@ set.shiftwidth = tab_width
 set.number = true
 set.relativenumber = false
 set.scrolloff = 8
+set.foldlevel = 20
 
 -- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', fg = '#3bb9c4' })
 -- vim.api.nvim_set_hl(0, 'FloatTitle', { fg = '#dfdfdf' })
